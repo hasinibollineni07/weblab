@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body{
+		font-family:Arial;
+		background-color:lightyellow;
+		display:flex;
+		text-align: center;
+		justify-content: center;
+	
+	}
+	.calculator{
+		background-color:lightblue;
+		padding:25px;
+		border-radius: 15px;
+		text-align: center;
+		border:2px solid black;
+		width: 300px;
+		text-align: center;
+	}
+	h2{
+		color:black;
+		margin-bottom: 20px;
+	}
+	input,select,button
+	{
+		padding:10px;
+		margin:8px;
+		width:80%;
+		border:1px solid black;
+		border-radius: 8px;
+		font-size:16px;
+	}
+	button
+	{
+		width: 85%;
+		background-color: pink;
+		color:black;
+		border:none;
+		cursor:pointer;
+	}
+	button:hover{
+		background-color:hotpink;
+	}
+	#result{
+		margin-top:15px;
+		color:darkgreen;
+	}
+
+</style>
+</head>
+<body>
+	<div class="calculator">
+		<h2>Calculator</h2>
+		<input type="number" id="FirstNumber" placeholder="Enter FirstNumber"><br>
+		<select id="operator">
+			<option value="+">(+)add</option>
+			<option value="-">(-)subtract</option>
+			<option value="*">(*)multiply</option>
+			<option value="/">(/)division</option>
+		</select><br>
+		<input type="number" id="SecondNumber" placeholder="Enter SecondNumber"><br>
+		<button onclick="calculate()">calculate</button>
+		<div id="result"></div>
+	</div>
+	<script>
+		function calculate(){
+			let FirstNumber=parseFloat(document.getElementById("FirstNumber").value);
+			let SecondNumber=parseFloat(document.getElementById("SecondNumber").value);
+			let operator=document.getElementById("operator").value;
+			let result=""; 
+
+			if(isNaN(FirstNumber) || isNaN(SecondNumber))
+			{
+				result="Please Enter valid numbers";
+			}
+			else
+			{
+				if(operator=="+")
+				{
+					result="Result:"+(FirstNumber+SecondNumber);
+				}
+				else if(operator=="-")
+				{
+					result="Result:"+(FirstNumber-SecondNumber);
+				}
+				else if(operator=="*")
+				{
+					result="Result:"+(FirstNumber*SecondNumber);
+				}
+				else if(operator="/")
+				{
+					if(SecondNumber==0)
+					{
+						result="Division by Zero not possible"
+					}
+					else
+					{
+						result="Result:"+(FirstNumber/SecondNumber);
+					}
+				}
+				else
+				{
+					result="invalid operator";
+				}
+			}
+			document.getElementById("result").innerHTML=result;
+		}
+	</script>
+</body>
+</html>
