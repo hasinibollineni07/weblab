@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Program 3</title>	
+	<title>Program 2</title>	
 	<style>
 		p{
 			position:absolute;
@@ -16,29 +16,34 @@
 <body>
 	<p id="demo"></p>
 	<script>
-		var grow=setInterval(growing,1000);
 		var font_size=5;
 		var p=document.getElementById("demo");
+		var is_growing=true;
+		p.innerHTML="TEXT GROWING";
+		p.style.color="red"
+		var grow=setInterval(growing,100);
 		function growing()
 		{
-			p.innerHTML="TEXT GROWING";
-			p.setAttribute('style',"font-size: " + font_size+"px; color:red");
-			font_size+=5;
-			if(font_size>=50)
+			if(is_growing==true)
 			{
-				clearInterval(grow);
-				shrink=setInterval(shrinking,1000);
+				font_size+=1;
+				if(font_size>=50)
+				{
+					is_growing=false;
+					p.innerHTML="TEXT SHRINKING";
+					p.style.color="blue"
+				}
+				p.style.fontSize=font_size+"px";
 			}
-		}
-		function shrinking()
-		{
-			font_size-=5;
-			p.innerHTML="TEXT SHRINKING";
-			p.setAttribute('style',"font-size: " + font_size+"px; color:blue");
-			if(font_size==50)
+			else
 			{
-				clearInterval(shrink);
-				grow=setInterval(growing,1000);
+				font_size-=1;
+				if(font_size<=5)
+				{
+					clearInterval(grow);
+					return;
+				}
+				p.style.fontSize=font_size+"px";
 			}
 		}
 	</script>
