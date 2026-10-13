@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="3style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 95%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="registrationBox">
+
+        <!-- Inline CSS -->
+        <h2 style="text-align: center; color: darkblue;">
+            Registration Form
+        </h2>
+
+        <form onsubmit="return validateForm()">
+
+            <label>First Name</label>
+            <input type="text" id="firstName" required>
+
+            <label>Password</label>
+            <input type="password" id="password" required>
+
+            <label>E-mail ID</label>
+            <input type="text" id="emailId" required>
+
+            <label>Mobile Number</label>
+            <input type="text" id="mobileNumber" required>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName =
+                document.getElementById("firstName").value;
+
+            var password =
+                document.getElementById("password").value;
+
+            var emailId =
+                document.getElementById("emailId").value;
+
+            var mobileNumber =
+                document.getElementById("mobileNumber").value;
+
+            // First name: only alphabets, minimum 6 characters
+            var namePattern = /^[a-zA-Z]{6,}$/;
+
+            // Password: minimum 6 characters
+            var passwordPattern = /^.{6,}$/;
+
+            // Email validation
+            var emailPattern =
+                /^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+
+            // Mobile: exactly 10 digits
+            var mobilePattern = /^[0-9]{10}$/;
+
+            if (!namePattern.test(firstName)) {
+                alert("First name must contain only alphabets and at least 6 characters");
+                return false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            if (!emailPattern.test(emailId)) {
+                alert("Enter a valid email ID like name@domain.com");
+                return false;
+            }
+
+            if (!mobilePattern.test(mobileNumber)) {
+                alert("Mobile number must contain exactly 10 digits");
+                return false;
+            }
+
+            alert("Registration successful");
+            return false;
+        }
+    </script>
+</body>
+</html>
