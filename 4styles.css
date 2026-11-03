@@ -1,0 +1,41 @@
+*{
+	display:block;
+	font-size:20px;
+	margin-left:15px;
+}
+USN
+{
+	color:red;
+	font-size:20px;
+	margin-left:15px;
+}
+NAME
+{
+	color:blue;
+	font-size:20px;
+	margin-left:15px;
+}
+COLLEGE
+{
+	color:yellow;
+	font-size:20px;
+	margin-left:15px;
+}
+BRANCH
+{
+	color:orange;
+	font-size:20px;
+	margin-left:15px;
+}
+YEAR
+{
+	color:pink;
+	font-size:20px;
+	margin-left:15px;
+}
+EMAIL
+{
+	color:pink;
+	font-size:20px;
+	margin-left:15px;
+}
