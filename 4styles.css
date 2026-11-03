@@ -1,10 +1,24 @@
-*{
-  display: block; font-size: 20px; margin-left: 15px;
-}
-USN 
+USN
 {
-color: blue;
-font-size: 30px;
-margin-top: 20px;
-margin-left: -5px;
+	color:pink;
+}
+NAME
+{
+	color:pink;
+}
+COLLEGE
+{
+	color:pink;
+}
+BRANCH
+{
+	color:pink;
+}
+YEAR
+{
+	color:pink;
+}
+EMAIL
+{
+	color:pink;
 }
