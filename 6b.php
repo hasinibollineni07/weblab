@@ -36,8 +36,7 @@ if ($n === $p) {
 echo " The multiplication of matrices: <br/>";
 $result = array();
 for ($i = 0; $i < $m; $i++) {
-for ($j = 0; $j < $q; $j++) { WEB TECHNOLOGY LABORATORY MANUAL(BCSL504)
-Dept. of CSE, BMSIT&M, Yelahanaka, Bengaluru 53
+for ($j = 0; $j < $q; $j++) {
 $result[$i][$j] = 0;
 for ($k = 0; $k < $n; $k++)
 $result[$i][$j] += $a[$i][$k] * $b[$k][$j];
